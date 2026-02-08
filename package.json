@@ -1,0 +1,13 @@
+{
+  "name": "mapainting",
+  "version": "1.0.0",
+  "description": "MA Painting - Professional Painter & Decorator website for West Yorkshire",
+  "private": true,
+  "scripts": {
+    "dev": "npx wrangler pages dev public",
+    "deploy": "npx wrangler pages deploy public --project-name=mapainting",
+    "preview": "npx wrangler pages dev public --port 8788"
+  },
+  "keywords": ["painter", "decorator", "west-yorkshire"],
+  "license": "UNLICENSED"
+}

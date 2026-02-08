@@ -750,12 +750,13 @@
                     </div>
                 </div>
             </div>
-            <form class="contact-form" onsubmit="handleSubmit(event)">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <input type="tel" placeholder="Your Phone Number">
-                <textarea placeholder="Tell us about your project..." required></textarea>
-                <button type="submit" class="btn">Send Message</button>
+            <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+                <input type="text" id="formName" placeholder="Your Name" required>
+                <input type="email" id="formEmail" placeholder="Your Email" required>
+                <input type="tel" id="formPhone" placeholder="Your Phone Number">
+                <textarea id="formMessage" placeholder="Tell us about your project..." required></textarea>
+                <button type="submit" class="btn" id="submitBtn">Send Message</button>
+                <div id="formStatus" style="display:none; padding: 0.8rem; border-radius: 8px; font-size: 0.95rem;"></div>
             </form>
         </div>
     </section>
@@ -790,10 +791,51 @@
             }
         });
 
-        function handleSubmit(e) {
+        async function handleSubmit(e) {
             e.preventDefault();
-            alert('Thanks for your message! We\'ll get back to you shortly.');
-            e.target.reset();
+            const btn = document.getElementById('submitBtn');
+            const status = document.getElementById('formStatus');
+            const originalText = btn.textContent;
+
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+            status.style.display = 'none';
+
+            const data = {
+                name: document.getElementById('formName').value,
+                email: document.getElementById('formEmail').value,
+                phone: document.getElementById('formPhone').value,
+                message: document.getElementById('formMessage').value,
+            };
+
+            try {
+                const res = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data),
+                });
+                const result = await res.json();
+
+                status.style.display = 'block';
+                if (result.success) {
+                    status.style.background = 'rgba(40, 167, 69, 0.2)';
+                    status.style.color = '#28a745';
+                    status.textContent = result.message;
+                    e.target.reset();
+                } else {
+                    status.style.background = 'rgba(233, 69, 96, 0.2)';
+                    status.style.color = '#e94560';
+                    status.textContent = result.error || 'Something went wrong.';
+                }
+            } catch (err) {
+                status.style.display = 'block';
+                status.style.background = 'rgba(233, 69, 96, 0.2)';
+                status.style.color = '#e94560';
+                status.textContent = 'Network error. Please try again or call us directly.';
+            }
+
+            btn.textContent = originalText;
+            btn.disabled = false;
         }
     </script>
 </body>
