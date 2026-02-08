@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MA Painting | Professional Painter & Decorator in West Yorkshire</title>
+    <meta name="description" content="MA Painting - Professional painting and decorating services across West Yorkshire. Quality workmanship, competitive prices, free quotes.">
+    <style>
+        /* ===== Reset & Base ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --dark: #1a1a2e;
+            --accent: #e94560;
+            --accent-dark: #c73e54;
+            --light: #f5f5f5;
+            --white: #ffffff;
+            --gray: #6c757d;
+            --text: #333;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* ===== Navigation ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--dark);
+            padding: 0.8rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .nav-brand img {
+            width: 45px;
+            height: 45px;
+        }
+
+        .nav-brand span {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover { color: var(--accent); }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        /* ===== Hero Section ===== */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--dark) 0%, #16213e 50%, var(--dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(233,69,96,0.08) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+        }
+
+        .hero-logo {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 0 20px rgba(233,69,96,0.4));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 .accent { color: var(--accent); }
+
+        .hero .tagline {
+            font-size: 1.3rem;
+            color: #adb5bd;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .location {
+            font-size: 1rem;
+            color: var(--accent);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2.5rem;
+            background: var(--accent);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            border: 2px solid var(--accent);
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(233,69,96,0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border-color: var(--white);
+            margin-left: 1rem;
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--dark);
+        }
+
+        /* ===== Sections ===== */
+        section { padding: 5rem 2rem; }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title .underline {
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            margin: 0.5rem auto;
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* ===== About ===== */
+        .about {
+            background: var(--white);
+        }
+
+        .about-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, var(--dark), #16213e);
+            border-radius: 12px;
+            padding: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-image img {
+            width: 200px;
+            height: 200px;
+            filter: drop-shadow(0 0 15px rgba(233,69,96,0.3));
+        }
+
+        .about-text h3 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        .about-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        /* ===== Services ===== */
+        .services { background: var(--light); }
+
+        .services-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: var(--dark);
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* ===== Why Choose Us ===== */
+        .why-us { background: var(--white); }
+
+        .why-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .why-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            border-radius: 10px;
+            background: var(--light);
+            transition: all 0.3s;
+        }
+
+        .why-item:hover {
+            background: var(--dark);
+            color: var(--white);
+        }
+
+        .why-item:hover p { color: #adb5bd; }
+
+        .why-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .why-item h4 {
+            margin-bottom: 0.3rem;
+            font-size: 1rem;
+        }
+
+        .why-item p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* ===== Areas ===== */
+        .areas { background: var(--light); }
+
+        .areas-list {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .area-tag {
+            background: var(--white);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            color: var(--dark);
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+
+        .area-tag:hover {
+            background: var(--accent);
+            color: var(--white);
+            transform: scale(1.05);
+        }
+
+        /* ===== Contact ===== */
+        .contact {
+            background: var(--dark);
+            color: var(--white);
+        }
+
+        .contact .section-title h2 { color: var(--white); }
+        .contact .section-title p { color: #adb5bd; }
+
+        .contact-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            font-size: 1.3rem;
+            color: var(--accent);
+            margin-top: 0.2rem;
+        }
+
+        .contact-item h4 {
+            margin-bottom: 0.2rem;
+            font-size: 1rem;
+        }
+
+        .contact-item p {
+            color: #adb5bd;
+            font-size: 0.95rem;
+        }
+
+        .contact-item a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover { text-decoration: underline; }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 0.9rem 1.2rem;
+            border: 1px solid #2a2a4a;
+            background: #16213e;
+            color: var(--white);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .contact-form textarea { resize: vertical; min-height: 120px; }
+
+        .contact-form .btn {
+            cursor: pointer;
+            font-family: inherit;
+            align-self: flex-start;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background: #111;
+            color: #adb5bd;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer a { color: var(--accent); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--dark);
+                flex-direction: column;
+                padding: 1rem 2rem;
+                gap: 1rem;
+                border-top: 1px solid #2a2a4a;
+            }
+
+            .nav-links.active { display: flex; }
+
+            .hero h1 { font-size: 2rem; }
+            .hero .tagline { font-size: 1.1rem; }
+
+            .about-grid,
+            .contact-grid { grid-template-columns: 1fr; }
+
+            .services-grid { grid-template-columns: 1fr; }
+            .why-grid { grid-template-columns: 1fr; }
+
+            .btn-outline { margin-left: 0; margin-top: 0.75rem; }
+
+            .hero-buttons { display: flex; flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="nav-brand">
+            <img src="assets/logo.svg" alt="MA Painting Logo">
+            <span>MA PAINTING</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#areas">Areas</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <img src="assets/logo.svg" alt="MA Painting Logo" class="hero-logo">
+            <h1>MA <span class="accent">PAINTING</span></h1>
+            <p class="tagline">Professional Painter & Decorator</p>
+            <p class="location">Serving West Yorkshire & Surrounding Areas</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn">Get a Free Quote</a>
+                <a href="#services" class="btn btn-outline">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="section-title">
+            <h2>About Us</h2>
+            <div class="underline"></div>
+            <p>Quality craftsmanship you can trust</p>
+        </div>
+        <div class="about-grid">
+            <div class="about-image">
+                <img src="assets/logo.svg" alt="MA Painting">
+            </div>
+            <div class="about-text">
+                <h3>Your Trusted Local Painter & Decorator</h3>
+                <p>At MA Painting, we take pride in transforming homes and businesses across West Yorkshire with expert painting and decorating services. Our attention to detail and commitment to quality sets us apart.</p>
+                <p>Whether it's a fresh coat of paint for your living room, a full exterior makeover, or commercial work, we deliver professional results every time. We use only premium materials and proven techniques to ensure a lasting finish.</p>
+                <div class="about-stats">
+                    <div class="stat">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <div class="underline"></div>
+            <p>Comprehensive painting & decorating solutions</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">&#127912;</div>
+                <h3>Interior Painting</h3>
+                <p>Transform your living spaces with flawless interior painting. Walls, ceilings, woodwork, and feature walls done to the highest standard.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#127960;</div>
+                <h3>Exterior Painting</h3>
+                <p>Protect and beautify your property's exterior with durable, weather-resistant paints and expert application.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#128220;</div>
+                <h3>Wallpapering</h3>
+                <p>Expert wallpaper hanging including feature walls, full rooms, and specialist papers. Perfect pattern matching guaranteed.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#128736;</div>
+                <h3>Surface Preparation</h3>
+                <p>Thorough preparation including filling, sanding, priming, and repair work for a flawless finish every time.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#127970;</div>
+                <h3>Commercial Work</h3>
+                <p>Professional painting services for offices, shops, restaurants, and commercial properties. Minimal disruption to your business.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#10024;</div>
+                <h3>Specialist Finishes</h3>
+                <p>Unique decorative finishes including colour consultations, feature walls, and bespoke paint effects.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us">
+        <div class="section-title">
+            <h2>Why Choose MA Painting?</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="why-grid">
+            <div class="why-item">
+                <div class="why-icon">&#9989;</div>
+                <div>
+                    <h4>Fully Insured</h4>
+                    <p>Complete peace of mind with full public liability insurance.</p>
+                </div>
+            </div>
+            <div class="why-item">
+                <div class="why-icon">&#128176;</div>
+                <div>
+                    <h4>Competitive Pricing</h4>
+                    <p>Fair, transparent quotes with no hidden costs or surprises.</p>
+                </div>
+            </div>
+            <div class="why-item">
+                <div class="why-icon">&#128197;</div>
+                <div>
+                    <h4>Reliable & Punctual</h4>
+                    <p>We turn up on time and complete work within agreed deadlines.</p>
+                </div>
+            </div>
+            <div class="why-item">
+                <div class="why-icon">&#127942;</div>
+                <div>
+                    <h4>Quality Materials</h4>
+                    <p>We only use premium paints and materials for a lasting finish.</p>
+                </div>
+            </div>
+            <div class="why-item">
+                <div class="why-icon">&#128587;</div>
+                <div>
+                    <h4>Clean & Tidy</h4>
+                    <p>We respect your property and leave it spotless when we're done.</p>
+                </div>
+            </div>
+            <div class="why-item">
+                <div class="why-icon">&#11088;</div>
+                <div>
+                    <h4>5-Star Reviews</h4>
+                    <p>Hundreds of satisfied customers across West Yorkshire.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Areas Covered -->
+    <section class="areas" id="areas">
+        <div class="section-title">
+            <h2>Areas We Cover</h2>
+            <div class="underline"></div>
+            <p>Proudly serving across West Yorkshire</p>
+        </div>
+        <div class="areas-list">
+            <span class="area-tag">Leeds</span>
+            <span class="area-tag">Bradford</span>
+            <span class="area-tag">Wakefield</span>
+            <span class="area-tag">Huddersfield</span>
+            <span class="area-tag">Halifax</span>
+            <span class="area-tag">Dewsbury</span>
+            <span class="area-tag">Batley</span>
+            <span class="area-tag">Keighley</span>
+            <span class="area-tag">Shipley</span>
+            <span class="area-tag">Pudsey</span>
+            <span class="area-tag">Morley</span>
+            <span class="area-tag">Bingley</span>
+            <span class="area-tag">Ilkley</span>
+            <span class="area-tag">Otley</span>
+            <span class="area-tag">Brighouse</span>
+            <span class="area-tag">Mirfield</span>
+            <span class="area-tag">Ossett</span>
+            <span class="area-tag">Heckmondwike</span>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-title">
+            <h2>Get In Touch</h2>
+            <div class="underline"></div>
+            <p>Ready to transform your space? Contact us for a free, no-obligation quote.</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">&#128222;</div>
+                    <div>
+                        <h4>Phone</h4>
+                        <p><a href="tel:+447000000000">07XXX XXX XXX</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">&#128231;</div>
+                    <div>
+                        <h4>Email</h4>
+                        <p><a href="mailto:info@mapainting.uk">info@mapainting.uk</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">&#128205;</div>
+                    <div>
+                        <h4>Location</h4>
+                        <p>West Yorkshire, England</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">&#128336;</div>
+                    <div>
+                        <h4>Working Hours</h4>
+                        <p>Mon - Fri: 8am - 6pm<br>Sat: 9am - 4pm</p>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="tel" placeholder="Your Phone Number">
+                <textarea placeholder="Tell us about your project..." required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 <a href="#">MA Painting</a> | Professional Painter & Decorator | West Yorkshire</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="https://mapainting.uk">mapainting.uk</a>
+        </p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(26, 26, 46, 0.98)';
+            } else {
+                nav.style.background = 'var(--dark)';
+            }
+        });
+
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert('Thanks for your message! We\'ll get back to you shortly.');
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
