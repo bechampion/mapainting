@@ -558,6 +558,139 @@
         }
 
         
+                /* Reviews */
+        .reviews {
+            background: var(--bg);
+        }
+
+        .reviews-header {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .overall-rating {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .rating-score {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .rating-details {
+            text-align: left;
+        }
+
+        .stars {
+            color: #fbbf24;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+        }
+
+        .rating-count {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .review-card {
+            background: var(--bg-alt);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .reviewer {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .reviewer-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .reviewer-info h4 {
+            font-size: 0.95rem;
+            color: var(--text);
+            margin-bottom: 0.1rem;
+        }
+
+        .reviewer-info span {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .review-stars {
+            color: #fbbf24;
+            font-size: 1rem;
+        }
+
+        .review-text {
+            color: var(--text);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .review-service {
+            margin-top: 1rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .review-service strong {
+            color: var(--accent);
+        }
+
+        @media (max-width: 900px) {
+            .reviews-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .overall-rating {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .rating-details {
+                text-align: center;
+            }
+        }
+
         /* Map */
         .map-section { 
             background: var(--bg-alt);
@@ -918,6 +1051,109 @@
                     <div class="why-icon">&#128197;</div>
                     <h3>Reliable Service</h3>
                     <p>We turn up on time and complete work within agreed deadlines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Customers Say</h2>
+                <p>Trusted by homeowners across the region</p>
+            </div>
+            <div class="overall-rating">
+                <div class="rating-score">4.9</div>
+                <div class="rating-details">
+                    <div class="stars">★★★★★</div>
+                    <div class="rating-count">Based on 127 reviews</div>
+                </div>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer">
+                            <div class="reviewer-avatar">JT</div>
+                            <div class="reviewer-info">
+                                <h4>James Thompson</h4>
+                                <span>Leeds</span>
+                            </div>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                    <p class="review-text">"Absolutely fantastic job on our living room and hallway. Professional from start to finish, turned up on time every day and left everything spotless. The finish is flawless - couldn't be happier!"</p>
+                    <div class="review-service">Service: <strong>Full Room & Hallway</strong></div>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer">
+                            <div class="reviewer-avatar">SW</div>
+                            <div class="reviewer-info">
+                                <h4>Sarah Williams</h4>
+                                <span>Manchester</span>
+                            </div>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                    <p class="review-text">"Had the whole house done before we moved in. Amazing attention to detail and the price was very reasonable. Would highly recommend to anyone looking for quality decorators."</p>
+                    <div class="review-service">Service: <strong>Full House Renovation</strong></div>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer">
+                            <div class="reviewer-avatar">MP</div>
+                            <div class="reviewer-info">
+                                <h4>Michael Patel</h4>
+                                <span>Bradford</span>
+                            </div>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                    <p class="review-text">"Used M.A Painting for my rental properties - quick turnaround, great communication, and excellent results. They understand the needs of landlords. Will definitely use again."</p>
+                    <div class="review-service">Service: <strong>Rental Property Refresh</strong></div>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer">
+                            <div class="reviewer-avatar">EH</div>
+                            <div class="reviewer-info">
+                                <h4>Emma Hughes</h4>
+                                <span>Chester</span>
+                            </div>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                    <p class="review-text">"The exterior painting transformed our house! Neighbours have been commenting on how great it looks. Very professional team and fairly priced. Thank you!"</p>
+                    <div class="review-service">Service: <strong>Exterior Painting</strong></div>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer">
+                            <div class="reviewer-avatar">DK</div>
+                            <div class="reviewer-info">
+                                <h4>David Khan</h4>
+                                <span>Huddersfield</span>
+                            </div>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                    <p class="review-text">"Excellent wallpapering work in our feature wall and bedroom. Pattern matching was perfect. Clean, tidy and the team were really friendly. 5 stars!"</p>
+                    <div class="review-service">Service: <strong>Wallpaper Hanging</strong></div>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer">
+                            <div class="reviewer-avatar">LR</div>
+                            <div class="reviewer-info">
+                                <h4>Lisa Roberts</h4>
+                                <span>Wakefield</span>
+                            </div>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                    <p class="review-text">"Had our hall, stairs and landing done - not an easy job but they made it look easy! Great prep work and the gloss on the woodwork is beautiful. Highly recommend."</p>
+                    <div class="review-service">Service: <strong>Hall, Stairs & Landing</strong></div>
                 </div>
             </div>
         </div>
