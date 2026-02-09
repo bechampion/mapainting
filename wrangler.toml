@@ -1,10 +1,3 @@
-name = "mapaintinggithub"
+name = "mapainting"
 compatibility_date = "2024-12-01"
 pages_build_output_dir = "./public"
-
-# KV namespace for storing contact form submissions
-# To create: npx wrangler kv:namespace create CONTACT_SUBMISSIONS
-# Then uncomment and add the ID below:
-# [[kv_namespaces]]
-# binding = "CONTACT_SUBMISSIONS"
-# id = "your-kv-namespace-id"

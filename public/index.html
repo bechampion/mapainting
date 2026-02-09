@@ -785,10 +785,13 @@
                     </div>
                 </div>
                 <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
-                    <input type="text" id="formName" placeholder="Your Name" required>
-                    <input type="email" id="formEmail" placeholder="Your Email" required>
-                    <input type="tel" id="formPhone" placeholder="Your Phone Number">
-                    <textarea id="formMessage" placeholder="Tell us about your project..." required></textarea>
+                    <input type="hidden" name="access_key" value="0_Gk75tI3CETw5zjs">
+                    <input type="hidden" name="subject" value="New Quote Request - MA Painting">
+                    <input type="hidden" name="from_name" value="MA Painting Website">
+                    <input type="text" name="name" id="formName" placeholder="Your Name" required>
+                    <input type="email" name="email" id="formEmail" placeholder="Your Email" required>
+                    <input type="tel" name="phone" id="formPhone" placeholder="Your Phone Number">
+                    <textarea name="message" id="formMessage" placeholder="Tell us about your project..." required></textarea>
                     <button type="submit" class="btn" id="submitBtn">Send Message</button>
                     <div id="formStatus" style="display:none;"></div>
                 </form>
@@ -828,6 +831,7 @@
 
         async function handleSubmit(e) {
             e.preventDefault();
+            const form = e.target;
             const btn = document.getElementById('submitBtn');
             const status = document.getElementById('formStatus');
             const originalText = btn.textContent;
@@ -836,15 +840,11 @@
             btn.disabled = true;
             status.style.display = 'none';
 
-            const data = {
-                name: document.getElementById('formName').value,
-                email: document.getElementById('formEmail').value,
-                phone: document.getElementById('formPhone').value,
-                message: document.getElementById('formMessage').value,
-            };
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
 
             try {
-                const res = await fetch('/api/contact', {
+                const res = await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data),
@@ -855,12 +855,12 @@
                 if (result.success) {
                     status.style.background = 'rgba(34, 197, 94, 0.2)';
                     status.style.color = '#22c55e';
-                    status.textContent = result.message;
-                    e.target.reset();
+                    status.textContent = 'Thanks! We\'ll get back to you shortly.';
+                    form.reset();
                 } else {
                     status.style.background = 'rgba(239, 68, 68, 0.2)';
                     status.style.color = '#ef4444';
-                    status.textContent = result.error || 'Something went wrong.';
+                    status.textContent = result.message || 'Something went wrong.';
                 }
             } catch (err) {
                 status.style.display = 'block';
