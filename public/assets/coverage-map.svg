@@ -1,58 +1,113 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 350">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 600">
   <!-- Background -->
-  <rect width="400" height="350" fill="#e8f4f8"/>
+  <rect width="500" height="600" fill="#e8f4f8"/>
   
-  <!-- UK outline simplified - Northern England focus -->
-  <path d="M50,300 Q30,250 40,200 Q50,150 80,120 Q100,100 130,90 Q160,80 200,75 Q240,70 280,80 Q320,90 350,120 Q370,150 375,200 Q380,250 360,300 Q340,330 300,340 Q250,350 200,345 Q150,340 100,330 Q70,320 50,300 Z" 
-        fill="#d4e5d7" stroke="#a8c5a8" stroke-width="2"/>
+  <!-- England outline - more realistic shape -->
+  <path d="
+    M280,50 
+    Q300,55 310,70 
+    L320,85 Q340,95 350,110
+    L355,130 Q365,145 360,165
+    L350,185 Q355,200 365,220
+    L375,240 Q385,260 380,280
+    L370,300 Q375,320 385,340
+    L395,360 Q400,380 395,400
+    L385,420 Q390,440 385,460
+    L375,480 Q365,500 350,510
+    L330,520 Q310,530 290,535
+    L270,540 Q250,545 230,540
+    L210,530 Q190,525 175,515
+    L160,500 Q145,485 135,465
+    L125,445 Q115,420 120,395
+    L130,370 Q125,345 115,320
+    L105,295 Q100,270 105,245
+    L115,220 Q110,195 115,170
+    L125,145 Q130,120 145,100
+    L165,80 Q185,65 210,55
+    L235,50 Q260,45 280,50
+    Z" 
+    fill="#d4e5d7" stroke="#9cb89c" stroke-width="2"/>
+  
+  <!-- Wales hint (left side) -->
+  <path d="
+    M105,295 Q85,310 75,330
+    L70,355 Q65,380 75,400
+    L90,420 Q100,435 120,445
+    L125,445 Q115,420 120,395
+    L130,370 Q125,345 115,320
+    L105,295 Z"
+    fill="#c5d9c5" stroke="#9cb89c" stroke-width="1"/>
+
+  <!-- Scotland hint (top) -->
+  <path d="
+    M235,50 Q220,35 200,25
+    L175,20 Q150,15 130,25
+    L115,40 Q100,55 95,75
+    L100,95 Q110,80 130,70
+    L150,65 Q175,55 200,50
+    L220,48 Q240,45 260,48
+    L280,50 Q260,45 235,50
+    Z"
+    fill="#c5d9c5" stroke="#9cb89c" stroke-width="1"/>
+    
+  <!-- Major cities reference points (grey, subtle) -->
+  <circle cx="340" cy="520" r="3" fill="#999" opacity="0.5"/>
+  <text x="350" y="524" font-family="Arial, sans-serif" font-size="8" fill="#999">London</text>
+  
+  <circle cx="200" cy="420" r="2" fill="#999" opacity="0.5"/>
+  <text x="208" y="424" font-family="Arial, sans-serif" font-size="8" fill="#999">Birmingham</text>
   
   <!-- West Yorkshire region - highlighted -->
-  <ellipse cx="220" cy="160" rx="50" ry="35" fill="rgba(59,130,246,0.3)" stroke="#3b82f6" stroke-width="3"/>
-  <text x="220" y="165" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#1e3a5f">West Yorkshire</text>
+  <ellipse cx="270" cy="280" rx="55" ry="40" fill="rgba(59,130,246,0.35)" stroke="#3b82f6" stroke-width="3"/>
   
   <!-- Greater Manchester region - highlighted -->
-  <ellipse cx="150" cy="200" rx="45" ry="30" fill="rgba(59,130,246,0.3)" stroke="#3b82f6" stroke-width="3"/>
-  <text x="150" y="205" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#1e3a5f">Manchester</text>
+  <ellipse cx="195" cy="320" rx="50" ry="35" fill="rgba(59,130,246,0.35)" stroke="#3b82f6" stroke-width="3"/>
   
   <!-- Chester/Cheshire region - highlighted -->
-  <ellipse cx="120" cy="260" rx="40" ry="25" fill="rgba(59,130,246,0.2)" stroke="#3b82f6" stroke-width="2"/>
-  <text x="120" y="265" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#1e3a5f">Chester</text>
+  <ellipse cx="175" cy="385" rx="45" ry="30" fill="rgba(59,130,246,0.25)" stroke="#3b82f6" stroke-width="2"/>
   
-  <!-- City markers -->
+  <!-- Region labels -->
+  <text x="270" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1e3a5f">West</text>
+  <text x="270" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1e3a5f">Yorkshire</text>
+  
+  <text x="195" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1e3a5f">Manchester</text>
+  
+  <text x="175" y="390" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1e3a5f">Chester</text>
+  
+  <!-- City markers in coverage area -->
   <!-- Leeds -->
-  <circle cx="230" cy="150" r="6" fill="#1e3a5f"/>
-  <text x="245" y="145" font-family="Inter, sans-serif" font-size="10" fill="#1e3a5f">Leeds</text>
+  <circle cx="285" cy="265" r="6" fill="#1e3a5f"/>
+  <text x="298" y="260" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#1e3a5f">Leeds</text>
   
   <!-- Bradford -->
-  <circle cx="200" cy="155" r="5" fill="#1e3a5f"/>
-  <text x="200" y="145" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#1e3a5f">Bradford</text>
+  <circle cx="250" cy="270" r="5" fill="#1e3a5f"/>
+  <text x="230" y="262" font-family="Arial, sans-serif" font-size="9" fill="#1e3a5f">Bradford</text>
   
   <!-- Huddersfield -->
-  <circle cx="205" cy="175" r="4" fill="#1e3a5f"/>
-  <text x="205" y="188" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#1e3a5f">Huddersfield</text>
-  
-  <!-- Manchester city -->
-  <circle cx="150" cy="195" r="6" fill="#1e3a5f"/>
-  
-  <!-- Chester city -->
-  <circle cx="120" cy="258" r="5" fill="#1e3a5f"/>
+  <circle cx="255" cy="300" r="4" fill="#1e3a5f"/>
+  <text x="255" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#1e3a5f">Huddersfield</text>
   
   <!-- Wakefield -->
-  <circle cx="245" cy="168" r="4" fill="#1e3a5f"/>
-  <text x="260" y="172" font-family="Inter, sans-serif" font-size="9" fill="#1e3a5f">Wakefield</text>
+  <circle cx="295" cy="290" r="4" fill="#1e3a5f"/>
+  <text x="310" y="294" font-family="Arial, sans-serif" font-size="9" fill="#1e3a5f">Wakefield</text>
   
   <!-- Halifax -->
-  <circle cx="185" cy="160" r="4" fill="#1e3a5f"/>
-  <text x="170" y="155" font-family="Inter, sans-serif" font-size="9" fill="#1e3a5f">Halifax</text>
+  <circle cx="240" cy="280" r="4" fill="#1e3a5f"/>
+  
+  <!-- Manchester city -->
+  <circle cx="195" cy="315" r="6" fill="#1e3a5f"/>
+  
+  <!-- Chester city -->
+  <circle cx="175" cy="385" r="5" fill="#1e3a5f"/>
   
   <!-- Legend -->
-  <rect x="280" y="280" width="110" height="55" rx="5" fill="white" stroke="#e5e7eb"/>
-  <circle cx="295" cy="298" r="5" fill="rgba(59,130,246,0.3)" stroke="#3b82f6" stroke-width="2"/>
-  <text x="305" y="302" font-family="Inter, sans-serif" font-size="10" fill="#1e3a5f">Coverage Area</text>
-  <circle cx="295" cy="318" r="4" fill="#1e3a5f"/>
-  <text x="305" y="322" font-family="Inter, sans-serif" font-size="10" fill="#1e3a5f">Major Cities</text>
+  <rect x="360" y="480" width="125" height="70" rx="8" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="422" y="500" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#1e3a5f">Legend</text>
+  <ellipse cx="378" cy="518" rx="10" ry="7" fill="rgba(59,130,246,0.35)" stroke="#3b82f6" stroke-width="2"/>
+  <text x="395" y="522" font-family="Arial, sans-serif" font-size="10" fill="#1e3a5f">Coverage Area</text>
+  <circle cx="378" cy="538" r="4" fill="#1e3a5f"/>
+  <text x="395" y="542" font-family="Arial, sans-serif" font-size="10" fill="#1e3a5f">Major Cities</text>
   
   <!-- Title -->
-  <text x="200" y="30" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#1e3a5f">Our Coverage Area</text>
-  <text x="200" y="50" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#6b7280">Northern England</text>
+  <text x="250" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1e3a5f">Our Coverage Area</text>
 </svg>
