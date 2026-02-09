@@ -564,15 +564,79 @@
             padding-bottom: 3rem;
         }
 
-        .map-container {
+        .map-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
             margin-top: 2rem;
+            align-items: start;
+        }
+
+        .map-container {
             border-radius: 12px;
             overflow: hidden;
             box-shadow: var(--shadow);
         }
-        
-        .map-container iframe {
-            display: block;
+
+        .locations-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .location-group {
+            background: white;
+            padding: 1.25rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .location-group:first-child {
+            grid-column: 1 / -1;
+        }
+
+        .location-group h3 {
+            color: var(--primary);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .location-group ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .location-group li {
+            background: var(--bg-alt);
+            padding: 0.3rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text);
+        }
+
+        @media (max-width: 900px) {
+            .map-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .locations-list {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            
+            .location-group:first-child {
+                grid-column: auto;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .locations-list {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* Footer */
@@ -866,8 +930,45 @@
                 <h2>Our Coverage Area</h2>
                 <p>Serving West Yorkshire, Greater Manchester & Cheshire</p>
             </div>
-            <div class="map-container">
-                <div id="map" style="width: 100%; height: 450px; border-radius: 12px;"></div>
+            <div class="map-layout">
+                <div class="map-container">
+                    <div id="map" style="width: 100%; height: 350px; border-radius: 12px;"></div>
+                </div>
+                <div class="locations-list">
+                    <div class="location-group">
+                        <h3>West Yorkshire</h3>
+                        <ul>
+                            <li>Leeds</li>
+                            <li>Bradford</li>
+                            <li>Wakefield</li>
+                            <li>Huddersfield</li>
+                            <li>Halifax</li>
+                            <li>Dewsbury</li>
+                            <li>Keighley</li>
+                            <li>Shipley</li>
+                            <li>Pudsey</li>
+                            <li>Morley</li>
+                        </ul>
+                    </div>
+                    <div class="location-group">
+                        <h3>Greater Manchester</h3>
+                        <ul>
+                            <li>Manchester</li>
+                            <li>Bolton</li>
+                            <li>Oldham</li>
+                            <li>Stockport</li>
+                            <li>Salford</li>
+                        </ul>
+                    </div>
+                    <div class="location-group">
+                        <h3>Cheshire</h3>
+                        <ul>
+                            <li>Chester</li>
+                            <li>Warrington</li>
+                            <li>Crewe</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
             <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -951,17 +1052,7 @@
                     }).addTo(map);
                 });
             </script>
-            <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 1.5rem; flex-wrap: wrap;">
-                <div style="display: flex; align-items: center; gap: 0.5rem;">
-                    <span style="background: #3b82f6; color: white; padding: 0.4rem 1rem; border-radius: 20px; font-weight: 600; font-size: 0.9rem;">West Yorkshire</span>
-                </div>
-                <div style="display: flex; align-items: center; gap: 0.5rem;">
-                    <span style="background: #3b82f6; color: white; padding: 0.4rem 1rem; border-radius: 20px; font-weight: 600; font-size: 0.9rem;">Greater Manchester</span>
-                </div>
-                <div style="display: flex; align-items: center; gap: 0.5rem;">
-                    <span style="background: #3b82f6; color: white; padding: 0.4rem 1rem; border-radius: 20px; font-weight: 600; font-size: 0.9rem;">Chester & Cheshire</span>
-                </div>
-            </div>
+
         </div>
     </section>
 
