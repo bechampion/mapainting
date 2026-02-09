@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MA Painting | Professional Painter & Decorator in West Yorkshire</title>
-    <meta name="description" content="MA Painting - Professional painting and decorating services across West Yorkshire. Quality workmanship, competitive prices, free quotes.">
+    <title>MA Painting|Professional Painter & Decorator in West Yorkshire</title>
+    <meta name="description"
+        content="MA Painting - Professional painting and decorating services across West Yorkshire. Quality workmanship, competitive prices, free quotes.">
     <style>
         /* ===== Reset & Base ===== */
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
         :root {
             --dark: #1a1a2e;
@@ -19,7 +27,9 @@
             --text: #333;
         }
 
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -38,7 +48,7 @@
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         .nav-brand {
@@ -74,7 +84,9 @@
             font-size: 0.95rem;
         }
 
-        .nav-links a:hover { color: var(--accent); }
+        .nav-links a:hover {
+            color: var(--accent);
+        }
 
         .hamburger {
             display: none;
@@ -112,13 +124,20 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(233,69,96,0.08) 0%, transparent 50%);
+            background: radial-gradient(circle, rgba(233, 69, 96, 0.08) 0%, transparent 50%);
             animation: pulse 8s ease-in-out infinite;
         }
 
         @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
         }
 
         .hero-content {
@@ -131,13 +150,20 @@
             width: 150px;
             height: 150px;
             margin-bottom: 1.5rem;
-            filter: drop-shadow(0 0 20px rgba(233,69,96,0.4));
+            filter: drop-shadow(0 0 20px rgba(233, 69, 96, 0.4));
             animation: float 3s ease-in-out infinite;
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         .hero h1 {
@@ -146,7 +172,9 @@
             letter-spacing: 2px;
         }
 
-        .hero h1 .accent { color: var(--accent); }
+        .hero h1 .accent {
+            color: var(--accent);
+        }
 
         .hero .tagline {
             font-size: 1.3rem;
@@ -178,7 +206,7 @@
             background: transparent;
             color: var(--accent);
             transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(233,69,96,0.3);
+            box-shadow: 0 5px 20px rgba(233, 69, 96, 0.3);
         }
 
         .btn-outline {
@@ -194,7 +222,9 @@
         }
 
         /* ===== Sections ===== */
-        section { padding: 5rem 2rem; }
+        section {
+            padding: 5rem 2rem;
+        }
 
         .section-title {
             text-align: center;
@@ -247,7 +277,7 @@
         .about-image img {
             width: 200px;
             height: 200px;
-            filter: drop-shadow(0 0 15px rgba(233,69,96,0.3));
+            filter: drop-shadow(0 0 15px rgba(233, 69, 96, 0.3));
         }
 
         .about-text h3 {
@@ -283,7 +313,9 @@
         }
 
         /* ===== Services ===== */
-        .services { background: var(--light); }
+        .services {
+            background: var(--light);
+        }
 
         .services-grid {
             max-width: 1000px;
@@ -299,12 +331,12 @@
             border-radius: 12px;
             text-align: center;
             transition: all 0.3s;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
         }
 
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         .service-icon {
@@ -324,7 +356,9 @@
         }
 
         /* ===== Why Choose Us ===== */
-        .why-us { background: var(--white); }
+        .why-us {
+            background: var(--white);
+        }
 
         .why-grid {
             max-width: 900px;
@@ -348,7 +382,9 @@
             color: var(--white);
         }
 
-        .why-item:hover p { color: #adb5bd; }
+        .why-item:hover p {
+            color: #adb5bd;
+        }
 
         .why-icon {
             font-size: 1.5rem;
@@ -366,7 +402,9 @@
         }
 
         /* ===== Areas ===== */
-        .areas { background: var(--light); }
+        .areas {
+            background: var(--light);
+        }
 
         .areas-list {
             max-width: 800px;
@@ -384,7 +422,7 @@
             font-size: 0.95rem;
             color: var(--dark);
             font-weight: 500;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
             transition: all 0.3s;
         }
 
@@ -400,8 +438,13 @@
             color: var(--white);
         }
 
-        .contact .section-title h2 { color: var(--white); }
-        .contact .section-title p { color: #adb5bd; }
+        .contact .section-title h2 {
+            color: var(--white);
+        }
+
+        .contact .section-title p {
+            color: #adb5bd;
+        }
 
         .contact-grid {
             max-width: 900px;
@@ -444,7 +487,9 @@
             text-decoration: none;
         }
 
-        .contact-item a:hover { text-decoration: underline; }
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
 
         .contact-form {
             display: flex;
@@ -470,7 +515,10 @@
             border-color: var(--accent);
         }
 
-        .contact-form textarea { resize: vertical; min-height: 120px; }
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
 
         .contact-form .btn {
             cursor: pointer;
@@ -487,12 +535,20 @@
             font-size: 0.9rem;
         }
 
-        footer a { color: var(--accent); text-decoration: none; }
-        footer a:hover { text-decoration: underline; }
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
 
         /* ===== Responsive ===== */
         @media (max-width: 768px) {
-            .hamburger { display: flex; }
+            .hamburger {
+                display: flex;
+            }
 
             .nav-links {
                 display: none;
@@ -507,23 +563,45 @@
                 border-top: 1px solid #2a2a4a;
             }
 
-            .nav-links.active { display: flex; }
+            .nav-links.active {
+                display: flex;
+            }
 
-            .hero h1 { font-size: 2rem; }
-            .hero .tagline { font-size: 1.1rem; }
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.1rem;
+            }
 
             .about-grid,
-            .contact-grid { grid-template-columns: 1fr; }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
 
-            .services-grid { grid-template-columns: 1fr; }
-            .why-grid { grid-template-columns: 1fr; }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
 
-            .btn-outline { margin-left: 0; margin-top: 0.75rem; }
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
 
-            .hero-buttons { display: flex; flex-direction: column; align-items: center; }
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 0.75rem;
+            }
+
+            .hero-buttons {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <!-- Navigation -->
@@ -570,8 +648,12 @@
             </div>
             <div class="about-text">
                 <h3>Your Trusted Local Painter & Decorator</h3>
-                <p>At MA Painting, we take pride in transforming homes and businesses across West Yorkshire with expert painting and decorating services. Our attention to detail and commitment to quality sets us apart.</p>
-                <p>Whether it's a fresh coat of paint for your living room, a full exterior makeover, or commercial work, we deliver professional results every time. We use only premium materials and proven techniques to ensure a lasting finish.</p>
+                <p>At MA Painting, we take pride in transforming homes and businesses across West Yorkshire with expert
+                    painting and decorating services. Our attention to detail and commitment to quality sets us apart.
+                </p>
+                <p>Whether it's a fresh coat of paint for your living room, a full exterior makeover, or commercial
+                    work, we deliver professional results every time. We use only premium materials and proven
+                    techniques to ensure a lasting finish.</p>
                 <div class="about-stats">
                     <div class="stat">
                         <div class="stat-number">10+</div>
@@ -601,32 +683,38 @@
             <div class="service-card">
                 <div class="service-icon">&#127912;</div>
                 <h3>Interior Painting</h3>
-                <p>Transform your living spaces with flawless interior painting. Walls, ceilings, woodwork, and feature walls done to the highest standard.</p>
+                <p>Transform your living spaces with flawless interior painting. Walls, ceilings, woodwork, and feature
+                    walls done to the highest standard.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">&#127960;</div>
                 <h3>Exterior Painting</h3>
-                <p>Protect and beautify your property's exterior with durable, weather-resistant paints and expert application.</p>
+                <p>Protect and beautify your property's exterior with durable, weather-resistant paints and expert
+                    application.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">&#128220;</div>
                 <h3>Wallpapering</h3>
-                <p>Expert wallpaper hanging including feature walls, full rooms, and specialist papers. Perfect pattern matching guaranteed.</p>
+                <p>Expert wallpaper hanging including feature walls, full rooms, and specialist papers. Perfect pattern
+                    matching guaranteed.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">&#128736;</div>
                 <h3>Surface Preparation</h3>
-                <p>Thorough preparation including filling, sanding, priming, and repair work for a flawless finish every time.</p>
+                <p>Thorough preparation including filling, sanding, priming, and repair work for a flawless finish every
+                    time.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">&#127970;</div>
                 <h3>Commercial Work</h3>
-                <p>Professional painting services for offices, shops, restaurants, and commercial properties. Minimal disruption to your business.</p>
+                <p>Professional painting services for offices, shops, restaurants, and commercial properties. Minimal
+                    disruption to your business.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">&#10024;</div>
                 <h3>Specialist Finishes</h3>
-                <p>Unique decorative finishes including colour consultations, feature walls, and bespoke paint effects.</p>
+                <p>Unique decorative finishes including colour consultations, feature walls, and bespoke paint effects.
+                </p>
             </div>
         </div>
     </section>
@@ -756,7 +844,8 @@
                 <input type="tel" id="formPhone" placeholder="Your Phone Number">
                 <textarea id="formMessage" placeholder="Tell us about your project..." required></textarea>
                 <button type="submit" class="btn" id="submitBtn">Send Message</button>
-                <div id="formStatus" style="display:none; padding: 0.8rem; border-radius: 8px; font-size: 0.95rem;"></div>
+                <div id="formStatus" style="display:none; padding: 0.8rem; border-radius: 8px; font-size: 0.95rem;">
+                </div>
             </form>
         </div>
     </section>
@@ -811,7 +900,7 @@
             try {
                 const res = await fetch('/api/contact', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify(data),
                 });
                 const result = await res.json();
@@ -839,4 +928,5 @@
         }
     </script>
 </body>
+
 </html>
